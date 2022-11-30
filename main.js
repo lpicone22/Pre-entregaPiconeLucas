@@ -11,7 +11,7 @@ if(edad < 18) {
     alert("Debes ingresar a la cobertura con un mayor de edad");
 }else if (edad >= 18 && edad <= 59) {
     alert("Contanos más sobre quienes tendrian el servicio!");
-}else while (edad >= 60  ) { 
+}while (edad >= 60  ) { 
 
 alert("Lo sentimos por el momento no contamos con opciones disponibles!")  
     ;
@@ -25,9 +25,8 @@ while (sumaConyugue>=60){
 let sumaHijos= parseInt(prompt("Tenes Hijos a tu cargo? cuantos?"))
 
 const precioHijogenesis= 1000
-let  precioTitular= (edad<=25)==2000
-let  precioTitular2grupo= (edad<=26)==3000
 
+ 
 
 function pagaxHijos(){
     return precioHijogenesis * sumaHijos
@@ -36,7 +35,12 @@ function pagaxHijos(){
 let valorPagar=pagaxHijos();
 console.log (valorPagar)
 
-alert(valorPagar)
+let Mensaje= ("el valor de la cobertura para tu flia es de" + valorPagar)
+alert (Mensaje)
+
+
+
+
 
 
 
