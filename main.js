@@ -3,7 +3,7 @@ let mensajeBienvenida = "Encontra el Plan de Salud ideal para vos!";
 alert(mensajeBienvenida);
 
 let nombreCliente = prompt("Ingrese por favor su nombre:");
-console.log(nombreCliente);
+console.log("nombre del titular" + nombreCliente);
 
 let edadTitular = parseInt(prompt("ingrese por favor su edad"));
 
@@ -27,20 +27,8 @@ while (edadConyugue>=60){
 console.log("edad de conyugue" + edadConyugue)
 let agregaHijos= parseInt(prompt("tenes hijos a tu cargo? coloca la cantidad o en caso contrario colocá 0"))
 
-/*  const precioHijogenesis= 1000
+console.log(agregaHijos)
 
- 
-
-function pagaxHijos(){
-    return precioHijogenesis * sumaHijos
-}
-
-let valorPagar=pagaxHijos();
-console.log (valorPagar)
-
-let Mensaje= ("el valor de la cobertura para tu flia es de" + valorPagar)
-alert (Mensaje)*/
- 
 
 
 // difinicion del velor por  rango etario para el plan genesis//
@@ -93,15 +81,35 @@ class rangoEtarioConyugue {
  const rangoEconyugue = listaPrecioGenesisC.find(rangoEtarioConyugue=> rangoEtarioConyugue.edades === edadConyugue)
  console.log(rangoEconyugue);
 
- const precioHijoGenesis= 9981
+ //valor que va pagar segun los hijos que agregue//
 
-
- function pagaxHijos(){
-     return precioHijoGenesis * agregaHijos
- }
+/*  let precioHijos = 9981
+function cuotaHijos()  {  return
+    precioHijos * agregaHijos
+}
+    
  
- let valorPagarHijos=pagaxHijos();
- console.log (valorPagarHijos)
+let totalHijos=cuotaHijos
+ console.log(totalHijos);*/ 
+ 
+ 
+let hijos= agregaHijos * 9981
+
+ // array para hacer luego la suma total de las cuotas//
+
+let arraySuma= []
+
+arraySuma.push(rangoEtitular, rangoEconyugue);
+console.log(arraySuma)
+
+//suma de cuota titular + esposa + hijos//
+
+let precioAdultos= arraySuma.reduce((acumulador, arraySuma )=>acumulador + arraySuma.valor, hijos)
+
+//let totalPrecio = arrayProductos.reduce((acumulador, producto) => acumulador + producto.precio, 0);
+
+console.log(precioAdultos)
+
 
 
 
