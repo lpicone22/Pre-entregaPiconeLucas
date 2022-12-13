@@ -19,12 +19,17 @@ alert("Lo sentimos por el momento no contamos con opciones disponibles!")
 }
 console.log ("edad del titular" + edadTitular)
 
-let edadConyugue = parseInt(prompt("queres agregar a tu pareja? indicanos su edad Aquí"))
+
+let edadConyugue = parseInt(prompt("Queres agregar a tu pareja? si la respuesta es NO coloca 0 si la respuesta es SI Indicanos su edad Aquí"))
+
+
+
 // si es mayor de 59 años no podemos cotizarlo y se bloquea la pagina//
 while (edadConyugue>=60){
     alert("lo sentimos no tenemos opciones disponibles")
 }
 console.log("edad de conyugue" + edadConyugue)
+
 let agregaHijos= parseInt(prompt("tenes hijos a tu cargo? coloca la cantidad o en caso contrario colocá 0"))
 
 console.log(agregaHijos)
@@ -33,7 +38,8 @@ console.log(agregaHijos)
 
 // difinicion del velor por  rango etario para el plan genesis//
 
-let primerGrupo= (edadTitular <=25)
+
+let primerGrupo= (edadTitular<= 25)
 let segundoGrupo= (edadTitular  <=35)
 let tercerGrupo = (edadTitular =36 <=54)
 let cuartoGrupo = (edadTitular >=55)
@@ -49,8 +55,11 @@ class rangoEtarioAdultos {
  const adultos= new rangoEtarioAdultos (segundoGrupo, 16432)
  const mayores= new rangoEtarioAdultos (tercerGrupo, 19408)
  const muyMayores= new rangoEtarioAdultos (cuartoGrupo,32879)
+
   
- const listaPrecioGenesis=[ jovenes, adultos, mayores, muyMayores];
+ const listaPrecioGenesis=[jovenes, adultos, mayores, muyMayores,];
+
+
 
  console.log(listaPrecioGenesis);
 
@@ -58,8 +67,10 @@ class rangoEtarioAdultos {
 
  const rangoEtitular = listaPrecioGenesis.find(rangoEtarioAdultos=> rangoEtarioAdultos.edades === edadTitular)
  console.log(rangoEtitular);
+// rango etario conyugue//
 
- let primerGrupoC= (edadConyugue <=25)
+let primerGrupoC= (edadConyugue >= 1 && edadConyugue <= 25)
+let sinPareja= (edadConyugue==0)
 let segundoGrupoC= (edadConyugue  <=35)
 let tercerGrupoC = (edadConyugue =36 <=54)
 let cuartoGrupoC = (edadConyugue >=55)
@@ -71,29 +82,20 @@ class rangoEtarioConyugue {
 }
  }
 
+ const sinParejasC= new rangoEtarioConyugue (sinPareja, 0)
  const jovenesC = new rangoEtarioConyugue (primerGrupoC, 11482)
  const adultosC= new rangoEtarioConyugue (segundoGrupoC, 16432)
  const mayoresC= new rangoEtarioConyugue (tercerGrupoC, 19408)
  const muyMayoresC= new rangoEtarioConyugue (cuartoGrupoC,32879)
   
- const listaPrecioGenesisC=[ jovenesC, adultosC, mayoresC, muyMayoresC];
+ const listaPrecioGenesisC=[sinParejasC, jovenesC, adultosC, mayoresC, muyMayoresC];
 
  const rangoEconyugue = listaPrecioGenesisC.find(rangoEtarioConyugue=> rangoEtarioConyugue.edades === edadConyugue)
  console.log(rangoEconyugue);
 
  //valor que va pagar segun los hijos que agregue//
 
-/*  let precioHijos = 9981
-function cuotaHijos()  {  return
-    precioHijos * agregaHijos
-}
-    
- 
-let totalHijos=cuotaHijos
- console.log(totalHijos);*/ 
- 
- 
-let hijos= agregaHijos * 9981
+ let hijos= agregaHijos * 9981
 
  // array para hacer luego la suma total de las cuotas//
 
